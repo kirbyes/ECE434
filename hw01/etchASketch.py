@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+chmod +x
+
 import sys, pygame
 pygame.init()
 pygame.event.set_allowed([pygame.QUIT, pygame.KEYDOWN])
