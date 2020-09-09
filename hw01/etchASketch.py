@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-chmod +x
+#!/usr/bin/python3
 
 import sys, pygame
 pygame.init()
