@@ -13,3 +13,18 @@ It will prompt you for inputs when run. Type in the desired number and hit enter
 Then you can move around and clear the screen just like in classic Etch-A-Sketch.
 To move, use the arrow keys.
 To clear the screen, use the spacebar.
+
+# hw01 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  8 | Etch-a-Sketch works
+|  2 | Code documented
+|  2 | Includes #!/usr/bin/env python3 and chmod +x
+|  2 | install.sh included if needed
+|  2 | Used hw01 directory
+|  2 | ReadMe.md included
+|  2 | gitLearn and gitLearnFork
+| 20 | **Total**
+
+Nice use of pygame
