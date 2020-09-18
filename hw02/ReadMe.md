@@ -24,6 +24,14 @@ Run the program by first running `chmod +x buttonsAndLEDs.py`. Then run `./butto
 | Shortest Period (us) | 42000 | 500 | 350 | 220 | 3.4 | 17.45 | 3.6 | 18.3 |
 | Period Stability (ms) | +/- 1 | +/- 0 | +/- 0 | +/- 0 |  |  |  |  |
 
+|  | sh with bash | python | c without lseek | c with lseek |
+| 0.1 | 242 | 201 |  200.5 |  200.5 |
+| 0.01 | 63 | 20.5 | 20.35 | 20.2 |
+| 0.001 | 45 | 2.4 | 2.3 | 2.18 |
+| 0.0005 | 42 | 1.4 | 0.8 | 0.67 |
+| 0.0001 | 42 | 0.6 | 0.5 | 0.27 |
+| 0.00005 | 42 | 0.5 | 0.35 | 0.22 |
+
 ### 1.) What's the min and max voltage?
 
 OV - 3.32V
@@ -74,11 +82,20 @@ Now the shortest period I can get is 31ms.
 
 Results are summarized in the table above.
 
+Run the program by first running `chmod +x toggle.py`. Then run `./toggle.py`. It takes in a gpio pin int the form "P9_11" and the sleep time.
+
 ## C
 
 Results are summarized in the table above.
 
+Create the executable by running the makefile with `make`. Then run the program with `./togglegpiolseek`. Takes in a sleep time as an argument.
+Uses gpio pin 11 on P9.
+
 ## Security
+
+* Changed the ssh port number from 22.
+* Set it up so that it would only accept ssh connections from on campus by using ACCEPT and DROP.
+* Edited the fail2ban config file so that it would reject ssh connections for 15 minutes after 2 failed attempts.
 
 
 ## Etch-A-Sketch
