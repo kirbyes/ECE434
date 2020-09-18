@@ -11,11 +11,13 @@ This program turns lights on when buttons are pressed. There are four LEDs each 
     * P9_23
     * P9_26
     * P9_27
+
 Run the programby first running `chmod +x buttonsAndLEDs.py`. Then run `./buttonsAndLEDs.py`
 
 ## Measuring a GPIO Pin with an Oscilliscope
 
 |  | sh | python | c without lseek | c with lseek | toggle1.c | toggle1.py | toggle2.c | toggle2.py |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Minimum Voltage (mV) | 0 | 0 | 0 | 0 |  |  |  |  |
 | Maximum Voltage (mV) | 190 | 290 | 290 | 290 |  |  |  |  |
 | Period (ms) | 243 | 201 | 200.5 | 200.5 |  |  |  |  |
