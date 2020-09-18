@@ -91,12 +91,15 @@ Results are summarized in the table above.
 Create the executable by running the makefile with `make`. Then run the program with `./togglegpiolseek`. Takes in a sleep time as an argument.
 Uses gpio pin 11 on P9.
 
+## gpiod
+
+Results are summarized in the table above.
+
 ## Security
 
 * Changed the ssh port number from 22.
 * Set it up so that it would only accept ssh connections from on campus by using ACCEPT and DROP.
 * Edited the fail2ban config file so that it would reject ssh connections for 15 minutes after 2 failed attempts.
-
 
 ## Etch-A-Sketch
 
