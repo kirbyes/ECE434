@@ -44,55 +44,57 @@ cursorleft = 0
 cursortop = 0
 
 #Function to move the cursor up
-def moveup(channel):
-	print("Up")
-	global cursortop,currRow,index
-	#If moving will put it outside of the screen, don't do it
-	if (cursortop - height/rows) >= 0:
-		#Move the cursor
-		cursortop = cursortop - height/rows
+def move(channel):
+	global cursortop, cursorleft, currRow, index, buttonUp, buttonDown, buttonRight, buttonLeft, buttonClear
+	if channel == buttonUp:
+		print("Up")
+		#If moving will put it outside of the screen, don't do it
+		if (cursortop - height/rows) >= 0:
+			#Move the cursor
+			cursortop = cursortop - height/rows
+			#Draw the rectangle based on where the cursor is
+			pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
+			
+	elif channel == buttonDown:
+		print("Down")
+		#If moving will put it outside of the screen, don't do it
+		if (cursortop + 2 * height/rows) <= width:
+			#Move the cursor
+			cursortop = cursortop + height/rows
+			
+	elif channel == buttonRight:
+		print("Right")
+		#If moving will put it outside of the screen, don't do it
+		if (cursorleft + 2 * width/columns) <= width:
+			#Move the cursor
+			cursorleft = cursorleft + width/columns
+	
+	elif channel == buttonLeft:
+		print("Left")
+		#If moving will put it outside of the screen, don't do it
+		if (cursorleft - width/columns) >= 0:
+			#Move the cursor
+			cursorleft = cursorleft - width/columns
+			
+	elif channel == buttonClear:
+		print("Clear")
+		screen.fill(white)
 
-#Function to move the cursor down
-def movedown(channel):
-	print("Down")
-	global cursortop,currRow,index
-	#If moving will put it outside of the screen, don't do it
-	if (cursortop + 2 * height/rows) <= width:
-		#Move the cursor
-		cursortop = cursortop + height/rows
+	#Draw the rectangle based on where the cursor is
+	pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
 
-#Function to move the cursor right
-def moveright(channel):
-	print("Right")
-	global cursorleft,currColumn,index
-	#If moving will put it outside of the screen, don't do it
-	if (cursorleft + 2 * width/columns) <= width:
-		#Move the cursor
-		cursorleft = cursorleft + width/columns
-
-#Function to move the cursor left
-def moveleft(channel):
-	print("Left")
-	global cursorleft,currColumn,index
-	#If moving will put it outside of the screen, don't do it
-	if (cursorleft - width/columns) >= 0:
-		#Move the cursor
-		cursorleft = cursorleft - width/columns
-
-#Function to clear the screen
-def clear(channel):
-	print("Clear")
-	screen.fill(white)
 
 #Add event Listeners
-GPIO.add_event_detect(buttonUp, GPIO.FALLING, callback=moveup, bouncetime=200)
-GPIO.add_event_detect(buttonDown, GPIO.FALLING, callback=movedown, bouncetime=200)
-GPIO.add_event_detect(buttonRight, GPIO.FALLING, callback=moveright, bouncetime=200)
-GPIO.add_event_detect(buttonLeft, GPIO.FALLING, callback=moveleft, bouncetime=200)
-GPIO.add_event_detect(buttonClear, GPIO.FALLING, callback=clear, bouncetime=200)
+GPIO.add_event_detect(buttonUp, GPIO.FALLING, callback=move)
+GPIO.add_event_detect(buttonDown, GPIO.FALLING, callback=move)
+GPIO.add_event_detect(buttonRight, GPIO.FALLING, callback=move)
+GPIO.add_event_detect(buttonLeft, GPIO.FALLING, callback=move)
+GPIO.add_event_detect(buttonClear, GPIO.FALLING, callback=move)
 
 #Initially clear the screen
 screen.fill(white)
+
+pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
 
 #Main loop
 while 1:
@@ -102,26 +104,6 @@ while 1:
 		if event.type == pygame.QUIT:
 			sys.exit()
 			GPIO.cleanup()
-#			#Handle button presses
-#			elif event.type == pygame.KEYDOWN:
-#				#Handle UP arrow
-#				if event.key == pygame.K_UP:
-#					moveup()
-#				#Handle DOWN arrow
-#				elif event.key == pygame.K_DOWN:
-#					movedown()
-#				#Handle right arrow
-#				elif event.key == pygame.K_RIGHT:
-#					moveright()
-#				#Handle left arrow
-#				elif event.key == pygame.K_LEFT:
-#					moveleft()
-#				#Handle SPACEBAR
-#				elif event.key == pygame.K_SPACE:
-#					clear()
-
-	#Draw the rectangle based on where the cursor is
-	pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
 
 	#Update the screen
 	pygame.display.update()
