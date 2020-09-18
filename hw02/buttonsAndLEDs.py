@@ -6,9 +6,11 @@
 # //
 # ///////////////////////////////////
 
+# Imports
 import Adafruit_BBIO.GPIO as GPIO
 import time
 
+# Initialize pin numbers
 led1 = "P9_11";
 led2 = "P9_13";
 led3 = "P9_15";
@@ -20,6 +22,7 @@ button4 = "P9_27";
 
 state = 0
 
+# Set up pins as inputs and outputs
 GPIO.setup(led1, GPIO.OUT)
 GPIO.setup(led2, GPIO.OUT)
 GPIO.setup(led3, GPIO.OUT)
@@ -29,6 +32,7 @@ GPIO.setup(button2, GPIO.IN)
 GPIO.setup(button3, GPIO.IN)
 GPIO.setup(button4, GPIO.IN)
 
+# Create the callback that chooses which LED to turn on
 def button_callback(channel):
 	state = GPIO.input(channel)
 	print("Edge detected on channel {}, value={}".format(channel, state))
@@ -41,11 +45,13 @@ def button_callback(channel):
 	elif channel == button4:
 		GPIO.output(led4, state)
 
+#Event detectors for the buttons
 GPIO.add_event_detect(button1, GPIO.BOTH, callback=button_callback)
 GPIO.add_event_detect(button2, GPIO.BOTH, callback=button_callback)
 GPIO.add_event_detect(button3, GPIO.BOTH, callback=button_callback)
 GPIO.add_event_detect(button4, GPIO.BOTH, callback=button_callback)
 
+# While loop that runs infinitely until the keyboard interrupts
 try:
 	while True:
 		time.sleep(100)

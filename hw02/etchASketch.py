@@ -43,9 +43,10 @@ screen = pygame.display.set_mode(size)
 cursorleft = 0
 cursortop = 0
 
-#Function to move the cursor up
+#Function to move the cursor and clear the screen
 def move(channel):
 	global cursortop, cursorleft, currRow, index, buttonUp, buttonDown, buttonRight, buttonLeft, buttonClear
+	#if statement to choose which button was pressed
 	if channel == buttonUp:
 		print("Up")
 		#If moving will put it outside of the screen, don't do it
@@ -94,6 +95,7 @@ GPIO.add_event_detect(buttonClear, GPIO.FALLING, callback=move)
 #Initially clear the screen
 screen.fill(white)
 
+# Draw the rectangle initially
 pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
 
 #Main loop

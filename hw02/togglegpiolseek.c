@@ -7,6 +7,7 @@
 //Created in AVR32 Studio (version 2.0.2) running on Ubuntu 8.04
 // Modified by Mark A. Yoder, 21-July-2011
 // Modified by Mark A. Yoder 30-May-2013
+// Modified by Eric Kirby 17-9-2020
 
 #include <string.h>
 #include <stdio.h>
@@ -44,6 +45,7 @@ int main(int argc, char** argv)
 
 	printf("...export file accessed, new pin now accessible\n");
 
+	//Open the file
 	gpio_fd = gpio_fd_open(gpio, O_WRONLY);
 
 	//SET DIRECTION
@@ -59,9 +61,11 @@ int main(int argc, char** argv)
 		// printf("...value set to %d...\n", toggle);
 		if (toggle)
 		{
+			//Move the cursor to the correct spot
 			lseek(gpio_fd, 1, SEEK_CUR);
 			write(gpio_fd, "1", 2);
 		} else {
+			//Move the cursor to the correct spot
 			lseek(gpio, 1, SEEK_CUR);
 			write(gpio_fd, "0", 2);
 		}
@@ -70,6 +74,7 @@ int main(int argc, char** argv)
 		usleep(onOffTime);
 	}
 
+	//Close the file
 	gpio_fd_close(gpio_fd);
 
 	return 0;
