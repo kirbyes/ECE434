@@ -1,3 +1,19 @@
+# hw02 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Buttons and LEDs 
+|  7 | Etch-a-Sketch works
+|    | Measuring a gpio pin on an Oscilloscope 
+|  4 | Questions answered
+|  2 | Table complete
+|  2 | gpiod
+|    | Security
+|  1 | ssh port
+|  0 | iptables     *command is missing*
+|  1 | fail2ban
+| 19 | **Total**
+
 # Homework 2
 ## Buttons and LEDs
 This program turns lights on when buttons are pressed. There are four LEDs each with a cooresponding button. Pin assignments are:
@@ -23,7 +39,6 @@ Run the program by first running `chmod +x buttonsAndLEDs.py`. Then run `./butto
 | Processor Usage (%) | 21.1 | 3.3 | 3.3 | 2.6 | 100 | 100 | 100 | 100 |
 | Shortest Period (us) | 42000 | 500 | 350 | 220 | 3.4 | 17.45 | 3.6 | 18.3 |
 | Period Stability (ms) | +/- 1 | +/- 0 | +/- 0 | +/- 0 |  |  |  |  |
-
 |  | sh with bash | python | c without lseek | c with lseek |
 | 0.1 | 242 | 201 |  200.5 |  200.5 |
 | 0.01 | 63 | 20.5 | 20.35 | 20.2 |
