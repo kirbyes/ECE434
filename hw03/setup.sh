@@ -22,12 +22,12 @@ echo "in" > /sys/class/gpio/gpio60/direction
 #Set the Thigh to be 26C for the first TMP101
 i2cset -y 2 0x48 3 26
 #Set the Tlow to be 23C for the first TMP101
-i2cset -y 2 0x48 2 23
+i2cset -y 2 0x48 2 24
 
 #Set the Thigh to be 26C for the second TMP101
 i2cset -y 2 0x49 3 26
 #Set the Tlow to be 23C for the second TMP101
-i2cset -y 2 0x49 2 23
+i2cset -y 2 0x49 2 24
 
 
 
@@ -36,5 +36,5 @@ i2cset -y 2 0x49 2 23
 #Configure the pins to eqep
 config-pin P8_11 eqep
 config-pin P8_12 eqep
-config_pin P8_33 eqep
-config_pin P8_35 eqep
+config-pin P8_33 eqep
+config-pin P8_35 eqep

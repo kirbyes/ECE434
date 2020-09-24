@@ -22,6 +22,8 @@ address2 = 0x49
 
 #Loop
 while True:
+	#print(GPIO.input("P9_12"), end="\n")
+	#print(GPIO.input("P9_11"), end="\n")
 	#If the first TMP101 goes outside of the range
 	if GPIO.event_detected("P9_12"):
 		#Read temp and print it
