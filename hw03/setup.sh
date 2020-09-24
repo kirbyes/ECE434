@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#Temperature
+
 #Give the python script permissions
 chmod +x temp.py
 
@@ -25,3 +28,13 @@ i2cset -y 2 0x48 2 23
 i2cset -y 2 0x49 3 26
 #Set the Tlow to be 23C for the second TMP101
 i2cset -y 2 0x49 2 23
+
+
+
+
+#Etch-A-Sketch
+#Configure the pins to eqep
+config-pin P8_11 eqep
+config-pin P8_12 eqep
+config_pin P8_33 eqep
+config_pin P8_35 eqep
