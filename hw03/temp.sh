@@ -1,20 +1,46 @@
-
 #!/bin/bash
-config-pin P9_17 i2c
-config-pin P9_18 i2c
-config-pin P9_21 i2c
-config-pin P9_22 i2c
 
+#Set up P9_11 as gpio if it isn't
+if [ ! -e /sys/class/gpio/gpio30 ]; then
+	echo "30" > /sys/class/gpio/export
+fi
+#Set P9_11 as input
+echo "in" > /sys/class/gpio/gpio30/direction
+
+#Set up P9_12 as gpio if it isn't
+if [ ! -e /sys/class/gpio/gpio60 ]; then
+	echo "30" > /sys/class/gpio/export
+fi
+#Set P9_12 as gpio if it isn't
+echo "in" > /sys/class/gpio/gpio60/direction
+
+#Loop
 while true
 do
-	temp1=`i2cget -y 1 0x48 00`
+	#Set the temp limits
+	i2cset -y 2 0x48 3 25
+	i2cset -y 2 0x48 2 23
+	alert1=`cat /sys/class/gpio/gpio60/value`
+
+	i2cset -y 2 0x49 3 25
+	i2cset -y 2 0x49 2 23
+	alert2=`cat /sys/class/gpio/gpio30/value`
+
+	printf "$alert1\n"
+	printf "$alert2\n"
+
+	#Get the temp
+	temp1=`i2cget -y 2 0x48 00`
 	temp2=`i2cget -y 2 0x49 00`
-	ctemp1=$(((($temp1>>4)*16)+($temp1&0xf)))
-	ctemp2=$(((($temp2>>4)*16)+($temp2&0xf)))
-	ftemp1=$((($ctemp1*9/5)+32))
-	ftemp2=$((($ctemp2*9/5)+32))
-	printf "Temperature 1: $ftemp1 F or $ctemp1 C\n"
-	printf "Temperature 2: $ftemp2 F or $ctemp2 C\n"
+
+	#Convert
+	ftemp1=$((($temp1*9/5)+32))
+	ftemp2=$((($temp2*9/5)+32))
+
+	#Print out the temp
+	printf "Temperature 1: $ftemp1 F or %d C\n" $temp1
+	printf "Temperature 2: $ftemp2 F or %d C\n" $temp2
 	printf "\n"
+
 	sleep 1
 done
