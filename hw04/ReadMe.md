@@ -1,6 +1,6 @@
 # Homework 4
 ## Memory Map
-![mmap](mmap.jpg)
+![mmap](mmap.JPG)
 
 This is a memory map for the BeagleBone Black. It specifically marks the four GPIO ports and 
 the starting and ending address of EMIF0 SDRAM.
