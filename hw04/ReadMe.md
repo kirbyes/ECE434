@@ -1,3 +1,19 @@
+# hw04 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Memory map 
+|  3 | mmap()
+|  4 | i2c via Kernel
+|  4 | Etch-a-Sketch via flask
+|  4 | LCD display
+|  1 | Extras
+| 18 | **Total**
+
+*My comments are in italics. --may*
+
+*Looks complete*
+
 # Homework 4
 ## Memory Map
 ![mmap](mmap.JPG)
@@ -15,6 +31,8 @@ To run this, `chmod +x toggle.py` then `sudo ./toggle.py.
 
 An oscilliscope was used to measure the frequency, which was found to be 91.1KHz.
 ![Oscilliscope](osci.jpg)
+
+*How does it compair to previous toggling methods?*
 
 ## Kernel Driver
 `kernelDriver.sh` is a kernel driver that reads the temperature sensors. 
