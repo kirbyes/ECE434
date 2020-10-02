@@ -33,11 +33,6 @@ columns = 8
 #Initialize width and height to be about 500
 #Should be exactly divisible by the numer of rows or columns 
 size = width, height = int(500/columns)*columns, int(500/rows)*rows
-#white = (255,255,255)
-#black = (0,0,0)
-
-#Initialize the screen as a pygame surface
-#screen = pygame.display.set_mode(size)
 
 #Set cursor
 cursorleft = 0
@@ -114,8 +109,10 @@ def clear():
 	#Draw the blocks on the matrix
 	bus.write_i2c_block_data(matrix, 0, indexHold)
 
+#Clear the LED Matrix
 clear()
 
+#Basic case of the route for Flask
 @app.route("/")
 def index():
 	template_data = {
@@ -123,8 +120,10 @@ def index():
 	}
 	return render_template("etchASketchTemplate.html", **template_data)
 
+#Route for flask based on the button press
 @app.route("/<action>")
 def action(action):
+	#Select the action
 	if action == 'right':
 		moveright()
 	elif action == 'left':
@@ -145,27 +144,5 @@ def action(action):
 if __name__=="__main__":
 	app.run(host='0.0.0.0', port=8081, debug=True)
 
-#Initially clear the screen
-#screen.fill(white)
-#clear()
-
-#Main loop
-#while 1:
-	#Handle events
-#	for event in pygame.event.get():
-		#Handle quit
-#		if event.type == pygame.QUIT:
-#			sys.exit()
-		#Handle button presses
-#		elif event.type == pygame.KEYDOWN:
-			#Handle clear
-#			if event.key == pygame.K_SPACE:
-#				clear()
-
-	#Draw the rectangle based on where the cursor is
-#	pygame.draw.rect(screen,black,(cursorleft,cursortop,width/columns,height/rows))
-
-	#Update the screen
-#	pygame.display.update()
 
 
