@@ -1,6 +1,6 @@
 # Homework 4
 ## Memory Map
-![mmap](mmap.png)
+![mmap](mmap.jpg)
 
 This is a memory map for the BeagleBone Black. It specifically marks the four GPIO ports and 
 the starting and ending address of EMIF0 SDRAM.
@@ -14,7 +14,7 @@ To run this, `chmod +x switchesAndLEDS.py` then `sudo ./switchesAndLEDs.py`.
 To run this, `chmod +x toggle.py` then `sudo ./toggle.py.
 
 An oscilliscope was used to measure the frequency, which was found to be 91.1KHz.
-!(Oscilliscope)[osci.jpg]
+![Oscilliscope](osci.jpg)
 
 ## Kernel Driver
 `kernelDriver.sh` is a kernel driver that reads the temperature sensors. 
