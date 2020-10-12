@@ -11,9 +11,11 @@ The answers to the questions are as follows:
 I have attached the output of the cross-compile below:
 
 ![host-output](helloWorldhost.JPG)
+
 This is the output of helloWorld.c from the host.
 
 ![bone-output](helloWorldbone.JPG)
+
 This is the output of the helloWorld.c on the bone.
 
 ## Kernel Modules
