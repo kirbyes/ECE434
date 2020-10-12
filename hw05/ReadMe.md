@@ -10,10 +10,10 @@ The answers to the questions are as follows:
 ## Cross-Compiling
 I have attached the output of the cross-compile below:
 
-!(host-output)[helloWorld host.JPG]
+![host-output](helloWorld host.JPG)
 This is the output of helloWorld.c from the host.
 
-!(bone-output)[helloWorld bone.JPG]
+![bone-output](helloWorld bone.JPG)
 This is the output of the helloWorld.c on the bone.
 
 ## Kernel Modules
@@ -30,4 +30,4 @@ the module into the kernel using `sudo insmod gpio_test.ko`. Once you are done, 
 ### led
 This part of the assignment can be found in the led folder. This blinks two LEDs, one connected to P9_23 and one connected to P9_25
 at different rates. To use it, first make it using `make` then insert the module into the kernel using `sudo insmod led.ko`. 
-Once you are done, you can remove the module from the kernel using `sudo rmmod led`.hello
+Once you are done, you can remove the module from the kernel using `sudo rmmod led`.
