@@ -1,4 +1,6 @@
 # Homework 5
+## Project
+I added the scoreboard project to the Projects document. It would be a physical scoreboard controlled by a website through the BeagleBone.
 ## Make
 I completed the exercise. `cd makefile` to get to the make files. Use `make` to create the executable.
 The answers to the questions are as follows:
