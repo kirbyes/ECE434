@@ -1,3 +1,17 @@
+# hw05 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Project - *I like the Spotify project*
+|  2 | Makefile
+|  4 | Kernel Source
+|  2 | Cross-Compiling
+|  8 | Kernel Modules: hello, ebbchar, gpio_test, led
+|  2 | Extras
+| 20 | **Total**
+
+*My comments are in italics. --may*
+
 # Homework 5
 ## Project
 I added the scoreboard project to the Projects document. It would be a physical scoreboard controlled by a website through the BeagleBone.
