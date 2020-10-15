@@ -35,8 +35,12 @@ whenever a higher priority interrupt occurs, it can run right away.
 
 ![With No Load](cyclictestnoload.png)
 
+Response times with no load
+
+
 ![With Load](cyclictestload.png)
 
+Response times with a load
 
 From the plot, it looks like the RT kernel does have a bounded latency of 
 about 100 microseconds.
