@@ -3,7 +3,7 @@ Table 1: Frequency Comparison
 |   | Frequency |
 |---|---|
 | ARM GPIO | 12.5 MHz |
-| PRU | 66MHz |
+| PRU | 66 MHz |
 | 4 PWM Channels | 630 kHz |
 
 ## Blinking an LED
