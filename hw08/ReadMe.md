@@ -1,9 +1,23 @@
+# hw08 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+| 14 | PRU
+|  2 | Controlling the PWM Frequency - optional
+|  2 | Reading an Input at Regular Intervals - optional
+|  2 | Analog Wave Generator - optional
+| 20 | **Total**
+
+*My comments are in italics. --may*
+
+*Very complete and well done!*
+
 # Homework 8
 Table 1: Frequency Comparison
 |   | Frequency |
 |---|---|
 | ARM GPIO | 12.5 MHz |
-| PRU | 66MHz |
+| PRU | 66 MHz |
 | 4 PWM Channels | 630 kHz |
 
 ## Blinking an LED
