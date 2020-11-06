@@ -5,9 +5,9 @@
 |  2 | Project Template
 |  0 | | Names - *missing*
 |  2 | | Executive Summary
-|  0 | Blynk - TMP101 - *Need to demo*
-|  0 | Blynk - Etch-a-sketch - extra
-|  4 | **Total**
+| 10 | Blynk - TMP101 - *Need to demo*
+|  4 | Blynk - Etch-a-sketch - extra
+| 18 | **Total**
 
 *My comments are in italics. --may*
 
