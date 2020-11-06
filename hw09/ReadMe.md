@@ -2,11 +2,11 @@
 
 | Points      | Description |
 | ----------- | ----------- |
-|  0 | Project Timeline - *missing*
+|  5 | Project Timeline
 | 10 | Logging to Sheets
 |  3 | Logging to ThingSpeak - optional
 |  2 | Extras
-| 15 | **Total**
+| 20 | **Total**
 
 *My comments are in italics. --may*
 
