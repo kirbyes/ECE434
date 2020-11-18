@@ -6,7 +6,7 @@ mostly just modifications of the mopidy-touchscreen to use the BeagleBone Black 
 
 More information about this project can be found at [ELinux](https://elinux.org/ECE434_Spotify_Box) and [hackster.io]().
 
-# Instillation
+# Installation
 
 1. Clone this git repository  
 `git clone https://github.com/kirbyes/ECE434.git`  
