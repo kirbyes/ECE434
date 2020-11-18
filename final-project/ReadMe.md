@@ -4,7 +4,7 @@
 This project uses Mopidy, Mopidy-Spotify, and Mopidy-Touchscreen to create an interface to listen to Spotify through a BeagleBone Black. It is
 mostly just modifications of the mopidy-touchscreen to use the BeagleBone Black and its gpio including an LCD screen through SPI1 and buttons.
 
-More information about this project can be found at [ELinux](https://elinux.org/ECE434_Spotify_Box) and [hackster.io]().
+More information about this project can be found at [ELinux](https://elinux.org/ECE434_Spotify_Box) and [hackster.io](https://www.hackster.io/bajajaman98/beaglebone-ipod-e39cd0).
 
 # Installation
 
