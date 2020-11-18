@@ -1,0 +1,11 @@
+*.egg-info
+*.pyc
+*.swp
+*~
+.coverage
+.idea/
+.tox/
+MANIFEST
+build/
+dist/
+xunit-*.xml
