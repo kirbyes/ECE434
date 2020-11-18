@@ -1,3 +1,15 @@
+# hw09 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  5 | Project Timeline
+| 10 | Logging to Sheets
+|  3 | Logging to ThingSpeak - optional
+|  2 | Extras
+| 20 | **Total**
+
+*My comments are in italics. --may*
+
 # Homework 9
 ## Logging in Sheets
 To run the program, first run `./setup.sh` then run `sheetsLogTemp.py`. 
