@@ -1,5 +1,3 @@
-.coveragerc
-.travis.yml
 LICENSE
 MANIFEST.in
 README.rst
